@@ -1,37 +1,38 @@
--- 1️⃣ Insertar Estados_Contrato
+-- Insertar en Estados_Contrato
 INSERT INTO Estados_Contrato (nombre, descripcion) VALUES
-('Activo', 'Contrato en vigencia'),
-('Finalizado', 'Contrato terminado'),
-('Cancelado', 'Contrato anulado por incumplimiento');
+('Activo', 'Contrato vigente'),
+('Finalizado', 'Contrato finalizado'),
+('Pendiente', 'Contrato en espera de aprobación');
 
--- 2️⃣ Insertar Tipos_Propiedad
+-- Insertar en Tipos_Propiedad
 INSERT INTO Tipos_Propiedad (nombre, descripcion) VALUES
-('Casa', 'Vivienda unifamiliar'),
-('Apartamento', 'Unidad en edificio residencial'),
-('Local Comercial', 'Propiedad para negocio');
+('Casa', 'Vivienda familiar'),
+('Apartamento', 'Unidad residencial en edificio'),
+('Oficina', 'Espacio comercial para trabajo');
 
--- 3️⃣ Insertar Estados_Propiedad
+-- Insertar en Estados_Propiedad
 INSERT INTO Estados_Propiedad (nombre, descripcion) VALUES
-('Disponible', 'Lista para vender o alquilar'),
-('Vendida', 'Propiedad ya vendida'),
-('Arrendada', 'Actualmente en alquiler');
+('Disponible', 'Propiedad disponible para venta o arrendamiento'),
+('Vendido', 'Propiedad ya vendida'),
+('Arrendada', 'Propiedad actualmente en arrendamiento');
 
--- 4️⃣ Insertar Personas (Propietarios, Clientes, Arrendatarios y Asesores)
+-- Insertar en Personas (propietarios, clientes, arrendatarios, asesores)
 INSERT INTO Personas (nombre, apellido, telefono, email, direccion, ciudad, codigo_postal) VALUES
-('Andrés', 'Ramírez', '3204567890', 'andres.ramirez@email.com', 'Carrera 1 #45-12', 'Cali', '760001'),
-('Diana', 'Fernández', '3127894561', 'diana.fernandez@email.com', 'Calle 5 #72-90', 'Cali', '760002'),
-('Luis', 'González', '3145678902', 'luis.gonzalez@email.com', 'Avenida 6N #25-60', 'Cali', '760003'),
-('Camila', 'Martínez', '3156789012', 'camila.martinez@email.com', 'Calle 15 #50-34', 'Cali', '760004');
+('Juan', 'Pérez', '3001234567', 'juan.perez@gmail.com', 'Calle 123 #45-67', 'Bogotá', '110111'),
+('Ana', 'García', '3117654321', 'ana.garcia@hotmail.com', 'Carrera 8 #23-45', 'Medellín', '050022'),
+('Carlos', 'Martínez', '3019876543', 'carlos.martinez@yahoo.com', 'Av. 7 #56-78', 'Cali', '760012');
 
--- 5️⃣ Insertar Propiedades
+-- Insertar en Propiedades
 INSERT INTO Propiedades (id_propietario, id_asesor, id_tipo_propiedad, id_estado_propiedad, direccion, ciudad, codigo_postal, metros_cuadrados, habitaciones, banos, precio, fecha_creacion) VALUES
-(1, 4, 1, 1, 'Carrera 100 #12-24', 'Cali', '760005', 180, 4, 3, 480000000.00, '2024-02-01'),
-(2, 4, 2, 1, 'Calle 50 #20-45', 'Cali', '760006', 90, 3, 2, 260000000.00, '2024-02-10');
+(1, 3, 1, 1, 'Calle 45 #12-34', 'Bogotá', '110222', 150, 3, 2, 500000000, '2025-01-01'),
+(2, 3, 2, 1, 'Carrera 12 #9-10', 'Medellín', '050033', 80, 2, 1, 300000000, '2025-01-10');
 
--- 6️⃣ Insertar Ventas_Propiedades
+-- Insertar en Ventas_Propiedades
 INSERT INTO Ventas_Propiedades (id_propiedad, id_cliente, id_asesor, fecha_venta, precio_venta, comision_asesor) VALUES
-(1, 3, 4, '2024-03-01', 470000000.00, 15000000.00);
+(1, 2, 3, '2025-02-01', 480000000, 24000000),
+(2, 1, 3, '2025-02-15', 290000000, 14500000);
 
--- 7️⃣ Insertar Contratos_Arrendamiento
+-- Insertar en Contratos_Arrendamiento
 INSERT INTO Contratos_Arrendamiento (id_estado_contrato, id_propiedad, id_arrendatario, id_asesor, fecha_inicio, fecha_fin, renta_mensual, deposito) VALUES
-(1, 2, 3, 4, '2024-04-01', '2025-04-01', 2500000.00, 5000000.00);
+(1, 1, 2, 3, '2025-03-01', '2026-03-01', 2000000, 4000000),
+(2, 2, 1, 3, '2025-02-20', '2026-02-20', 1500000, 3000000);

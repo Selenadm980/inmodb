@@ -21,25 +21,25 @@ public class Persona {
 
     private Integer idPersona;
 
-    @Column(name = "nombre", nullable = false, length = 30)
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
-    @Column(name = "apellido", nullable = false, length = 30)
+    @Column(name = "apellido", nullable = false, length = 100)
     private String apellido;
 
-    @Column(name = "telefono", nullable = false, length = 20)
+    @Column(name = "telefono", nullable = false, length = 15)
     private String telefono;
 
-    @Column(name = "email", length = 50)
+    @Column(name = "email", length = 100)
     private String email;
 
-    @Column(name = "direccion", length = 100)
+    @Column(name = "direccion", length = 200)
     private String direccion;
 
     @Column(name = "ciudad", length = 100)
     private String ciudad;
 
-    @Column(name = "codigo_postal", length = 20)
+    @Column(name = "codigo_postal", length = 10)
     private String codigoPostal;
 
 }
